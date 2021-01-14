@@ -12,7 +12,7 @@
     <ItemGroup>
         <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
 
-        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.0" />
+        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.1" />
     </ItemGroup>
 
     <Target Name="Copy" AfterTargets="Reobfuscate">
