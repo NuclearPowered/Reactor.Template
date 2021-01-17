@@ -4,14 +4,14 @@ using BepInEx.IL2CPP;
 using HarmonyLib;
 using Reactor;
 
-namespace Example
+namespace Reactor.Template
 {
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
-    public class ExamplePlugin : BasePlugin
+    public class TemplatePlugin : BasePlugin
     {
-        public const string Id = "gg.reactor.Example";
+        public const string Id = "me.change.please";
 
         public Harmony Harmony { get; } = new Harmony(Id);
 
@@ -29,7 +29,7 @@ namespace Example
         {
             public static void Postfix(PlayerControl __instance)
             {
-                __instance.nameText.Text = PluginSingleton<ExamplePlugin>.Instance.Name.Value;
+                __instance.nameText.Text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
             }
         }
     }

@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "NuclearPowered",
+    "classifications": [
+        "Reactor"
+    ],
+    "identity": "Reactor.Template",
+    "name": "Reactor.Template",
+    "shortName": "reactor",
+    "tags": {
+        "language": "C#",
+        "type": "project",
+        "platform": ".NET Core"
+    },
+    "sourceName": "Reactor.Template",
+    "preferNameDirectory": true,
+    "symbols": {
+        "pluginId": {
+            "type": "parameter",
+            "description": "BepInEx plugin id",
+            "datatype": "text",
+            "replaces": "me.change.please"
+        },
+        "pluginClass": {
+            "type": "parameter",
+            "description": "Plugin class name (name + Plugin suffix)",
+            "datatype": "text",
+            "replaces": "TemplatePlugin"
+        }
+    }
+}
