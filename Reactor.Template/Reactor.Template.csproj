@@ -14,7 +14,7 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(GamePlatform)' == 'Itch'">
-        <GameVersion>2021.3.31.3</GameVersion>
+        <GameVersion>2021.3.31.3i</GameVersion>
         <DefineConstants>$(DefineConstants);ITCH</DefineConstants>
     </PropertyGroup>
 
