@@ -29,7 +29,7 @@ namespace Reactor.Template
         {
             public static void Postfix(PlayerControl __instance)
             {
-                __instance.nameText.Text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
+                __instance.nameText.text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
             }
         }
     }
