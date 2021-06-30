@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0.5</PackageVersion>
+        <PackageVersion>2.0.0</PackageVersion>
         <PackageId>Reactor.Template</PackageId>
         <Authors>NuclearPowered</Authors>
         <Description>Mod template for Reactor.</Description>
@@ -18,5 +18,6 @@
         <Content Include=".template.config\**\*" />
         <Content Include="Reactor.Template.sln" />
         <Content Include="Reactor.Template\**\*" Exclude="**\bin\**;**\obj\**" />
+        <Content Include="build.cake;.github/workflows/main.yml" />
     </ItemGroup>
 </Project>

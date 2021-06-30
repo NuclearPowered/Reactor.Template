@@ -1,30 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <Version>1.0.0</Version>
-        <Mappings>NuclearPowered/Mappings:0.4.0</Mappings>
+        <LangVersion>latest</LangVersion>
+        <DebugType>embedded</DebugType>
 
-        <Description>Mod template for Reactor</Description>
-        <Authors>js6pak</Authors>
+        <VersionPrefix>1.0.0</VersionPrefix>
+        <VersionSuffix>dev</VersionSuffix>
+        <Description>Mod generated using Reactor.Template</Description>
+        <!-- <Authors>your name</Authors> -->
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(GamePlatform)' == 'Steam'">
-        <GameVersion>2021.4.14s</GameVersion>
-        <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(GamePlatform)' == 'Itch'">
-        <GameVersion>2021.4.14i</GameVersion>
-        <DefineConstants>$(DefineConstants);ITCH</DefineConstants>
+    <PropertyGroup>
+        <GameVersion Condition="'$(GamePlatform)' == 'Steam'">2021.6.15s</GameVersion>
+        <GameVersion Condition="'$(GamePlatform)' == 'Itch'">2021.6.15i</GameVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
-
-        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.3.0" />
+        <PackageReference Include="Reactor" Version="1.0.0-rc.1" />
+        <PackageReference Include="Reactor.MSBuild" Version="0.1.5" PrivateAssets="all" />
     </ItemGroup>
 
-    <Target Name="Copy" AfterTargets="Reobfuscate">
-        <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" Condition="'$(Configuration)' == 'Debug'" />
+    <Target Name="Copy" AfterTargets="Build" Condition="'$(AmongUs)' != ''">
+        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" Condition="'$(Configuration)' == 'Debug'" />
     </Target>
 </Project>
