@@ -6,6 +6,10 @@
         <Authors>NuclearPowered</Authors>
         <Description>Mod template for Reactor.</Description>
 
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/NuclearPowered/Reactor.Template</RepositoryUrl>
+        <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+
         <TargetFramework>netstandard2.1</TargetFramework>
 
         <IncludeContentInPack>true</IncludeContentInPack>
