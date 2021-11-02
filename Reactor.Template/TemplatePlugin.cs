@@ -6,20 +6,18 @@ using Reactor;
 
 namespace Reactor.Template
 {
-    [BepInPlugin(Id)]
+    [BepInAutoPlugin("me.change.please")]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
-    public class TemplatePlugin : BasePlugin
+    public partial class TemplatePlugin : BasePlugin
     {
-        public const string Id = "me.change.please";
-
         public Harmony Harmony { get; } = new Harmony(Id);
 
-        public ConfigEntry<string> Name { get; private set; }
+        public ConfigEntry<string> ConfigName { get; private set; }
 
         public override void Load()
         {
-            Name = Config.Bind("Fake", "Name", ":>");
+            ConfigName = Config.Bind("Fake", "Name", ":>");
 
             Harmony.PatchAll();
         }
@@ -29,7 +27,7 @@ namespace Reactor.Template
         {
             public static void Postfix(PlayerControl __instance)
             {
-                __instance.nameText.text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
+                __instance.nameText.text = PluginSingleton<TemplatePlugin>.Instance.ConfigName.Value;
             }
         }
     }

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>2.0.0</PackageVersion>
+        <PackageVersion>3.0.0</PackageVersion>
         <PackageId>Reactor.Template</PackageId>
         <Authors>NuclearPowered</Authors>
         <Description>Mod template for Reactor.</Description>
@@ -15,6 +15,9 @@
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <NoBuild>true</NoBuild>
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,6 +25,6 @@
         <Content Include=".template.config\**\*" />
         <Content Include="Reactor.Template.sln" />
         <Content Include="Reactor.Template\**\*" Exclude="**\bin\**;**\obj\**" />
-        <Content Include="build.cake;.github/workflows/main.yml" />
+        <Content Include="nuget.config;build.cake;.github/workflows/main.yml" />
     </ItemGroup>
 </Project>
