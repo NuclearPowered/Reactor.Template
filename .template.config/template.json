@@ -15,12 +15,6 @@
     "sourceName": "Reactor.Template",
     "preferNameDirectory": true,
     "symbols": {
-        "pluginId": {
-            "type": "parameter",
-            "description": "BepInEx plugin id",
-            "datatype": "text",
-            "replaces": "me.change.please"
-        },
         "pluginClass": {
             "type": "parameter",
             "description": "Plugin class name (name + Plugin suffix)",
