@@ -9,7 +9,7 @@
     "shortName": "reactor",
     "tags": {
         "language": "C#",
-        "type": "project",
+        "type": "solution",
         "platform": ".NET Core"
     },
     "sourceName": "Reactor.Template",
