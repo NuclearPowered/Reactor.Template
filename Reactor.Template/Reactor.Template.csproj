@@ -5,8 +5,8 @@
         <DebugType>embedded</DebugType>
 
         <VersionPrefix>1.0.0</VersionPrefix>
-        <VersionSuffix>dev</VersionSuffix>
-        <Description>Mod generated using Reactor.Template</Description>
+        <VersionSuffix>dev</VersionSuffix> 
+        <Description>Mod generated using Reactor Template</Description>
         <!-- <Authors>your name</Authors> -->
     </PropertyGroup>
 

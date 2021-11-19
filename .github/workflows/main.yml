@@ -21,8 +21,7 @@ jobs:
         with:
           verbosity: Diagnostic
 
-# Change Reactor.Template to the name of your project if you want CI artifacts
-#      - uses: actions/upload-artifact@v2
-#        with:
-#          name: Reactor.Template.dll
-#          path: Reactor.Template/bin/Release/netstandard2.1/Reactor.Template.dll
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Reactor.Template.dll
+          path: Reactor.Template/bin/Release/netstandard2.1/Reactor.Template.dll
