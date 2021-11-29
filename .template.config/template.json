@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json.schemastore.org/template",
+    "$schema": "https://json.schemastore.org/template",
     "author": "NuclearPowered",
     "classifications": [
         "Reactor"
@@ -10,16 +10,41 @@
     "tags": {
         "language": "C#",
         "type": "solution",
-        "platform": ".NET Core"
+        "platform": "Among Us"
     },
     "sourceName": "Reactor.Template",
     "preferNameDirectory": true,
     "symbols": {
+        "pluginName": {
+            "type": "derived",
+            "valueSource": "name",
+            "valueTransform": "ValueAfterLastDot"
+        },
         "pluginClass": {
-            "type": "parameter",
-            "description": "Plugin class name (name + Plugin suffix)",
-            "datatype": "text",
-            "replaces": "TemplatePlugin"
+            "type": "generated",
+            "datatype": "string",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                    {
+                        "type": "ref",
+                        "value": "pluginName"
+                    },
+                    {
+                        "type": "const",
+                        "value": "Plugin"
+                    }
+                ]
+            },
+            "replaces": "TemplatePlugin",
+            "fileRename": "TemplatePlugin"
+        }
+    },
+    "forms": {
+        "ValueAfterLastDot": {
+            "identifier": "replace",
+            "pattern": "^.*\\.(?=[^\\.]+$)",
+            "replacement": ""
         }
     }
 }
