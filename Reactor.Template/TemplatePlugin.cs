@@ -27,7 +27,7 @@ public partial class TemplatePlugin : BasePlugin
     {
         public static void Postfix(PlayerControl __instance)
         {
-            __instance.nameText.text = PluginSingleton<TemplatePlugin>.Instance.ConfigName.Value;
+            __instance.cosmetics.nameText.text = PluginSingleton<TemplatePlugin>.Instance.ConfigName.Value;
         }
     }
 }
